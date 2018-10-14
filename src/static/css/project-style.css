@@ -1,0 +1,145 @@
+@font-face {
+    font-family: varela;
+    src: url(../fonts/VarelaRound-Regular.ttf);
+    font-weight: bold;
+}
+
+html, body, h1, h2, h3, h4, h5{
+    font-family: varela;
+}
+
+.grid-container{
+    position: relative;
+}
+#value-proposition-container{
+    position: absolute;
+    top: 20%;
+}
+
+.value-proposition h5{
+    color: #616161;
+    line-height: 1.1em;
+}
+
+#content-container{
+    background-color: #F2F2F2;
+    padding-top: 120px;
+    padding-bottom: 120px;
+}
+
+#content-container .service-item .image {
+    margin-bottom: 50px;
+
+}
+#content-container .service-item .image img{
+    height: 150px;
+}
+
+#event-container{
+    padding-top: 112px;
+    padding-bottom: 120px;
+}
+
+#event-title{
+    padding-bottom: 50px;
+}
+#event-container .event-teaser{
+    padding-right: 40px;
+    padding-left: 30px;
+}
+#event-container .event-date h1 {
+    color: #5bbc2e;
+    font-size: 54px;
+    font-weight: 900;
+    line-height: 54px;
+    letter-spacing: 2px;
+}
+#event-container .event-item{
+    margin-bottom: 60px;
+}
+#event-container .event-item .event-image{
+    height: 180px;
+    background-color: #83C365;
+    border-radius: 10px;
+}
+
+#event-container .event-date .underlined{
+    height: 1px;
+    background-color: #e2e2e2;
+    width: 100%;
+}
+#event-container .event-date p{
+    color: #666666;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1;
+    margin-top: 15px;
+}
+#event-container .event-teaser a {
+    color: #222222;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.25;
+}
+
+#event-container .event-teaser p{
+    color: #666666;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.8;
+    margin: 10px 0;
+}
+.registration-container{
+    position: relative;
+}
+.registration-container .background-image{
+    background-image: url("/static/images/training-univer.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: center;
+    height: 450px;
+    width: 100%;
+}
+
+.registration-container .content{
+    background: rgba(0,0,0, 0.9);
+    color: #ffffff;
+    padding: 120px 0;
+    position: absolute;
+    top: 0;
+     height: 450px;
+    width: 100%;
+}
+
+.registration-container .content .button {
+    font-size: 1.3em;
+    border-radius: 5px;
+    margin-top: 20px;
+    background-color: #0000FF;
+
+}
+
+#news-container{
+    background-color: #F2F2F2;
+    padding: 120px 0;
+}
+
+#section-title{
+    margin-bottom: 60px;
+}
+
+#news-container .news-item-first .card{
+    border-radius: 10px;
+}
+
+#news-container .news-item-first .card-section{
+    padding: 40px;
+}
+
+#news-container .news-item-list{
+    padding: 0 30px !important;
+}
+
+#news-container .news-item-list .image img{
+    border-radius: 5px;
+}

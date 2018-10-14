@@ -1,25 +1,210 @@
 {% extends "base.html" %}
 
-{% block breadcrumb %}
-<li class="breadcrumb-item active">{{latest_reading}}</li>
-{% endblock %}
-
 {% block content %}
-<div class="container">
-
-    <div class="row">
-        {% for context in object_list %}
-        <div class="col-sm">
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                    <a href="">
-                        <h5 class="card-title">{{ context.reading_name }}</h5>
-                    </a>
-                    <p class="card-text">{{latest_reading.description}}</p>
+<div class="grid-container full">
+    <div class="grid-x">
+        <div class="cell">
+            <img src="/static/images/home-middle-univer.jpg" alt="welcome image"/>
+        </div>
+        <div class="cell" id="value-proposition-container">
+            <div class="grid-x">
+                <div class="cell large-8 large-offset-2 text-center">
+                    <div class="value-proposition">
+                        <h1>Better Education For a Better World</h1>
+                        <h5>Investigationes Demonstraverunt lectores legere me lius ii legunt </h5>
+                        <h5>saepius lectorum parum calarm.</h5>
+                    </div>
                 </div>
             </div>
         </div>
-        {% endfor %}
     </div>
 </div>
+<div class="grid-container full" id="content-container">
+    <div class="grid-x">
+        <div class="grid-container">
+            <div class="grid-x">
+                <div class="cell medium-4 service-item">
+                    <div class="grid-x">
+                        <div class="cell image">
+                            <img src="/static/images/services-home.png" alt=""/>
+                        </div>
+                    </div>
+                    <div class="grid-x">
+                        <div class="cell">
+                            <h4>Professional Teachers</h4>
+                            <p>Lorem ipsum dolor sit armet, consectetuer adipiscing elit, sed diam nonumy nibh equismod tincidunt ut laoreet.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="cell medium-4 service-item">
+                    <div class="grid-x">
+                        <div class="cell image">
+                            <img src="/static/images/imfd-ds2.png" alt=""/>
+                        </div>
+                    </div>
+                    <div class="grid-x">
+                        <div class="cell  content">
+                            <h4>Professional Teachers</h4>
+                            <p>Lorem ipsum dolor sit armet, consectetuer adipiscing elit, sed diam nonumy nibh equismod tincidunt ut laoreet.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="cell medium-4 service-item">
+                    <div class="grid-x">
+                        <div class="cell image">
+                            <img src="/static/images/imfd-ds3.png" alt=""/>
+                        </div>
+                    </div>
+                    <div class="grid-x">
+                        <div class="cell">
+                            <h4>Professional Teachers</h4>
+                            <p>Lorem ipsum dolor sit armet, consectetuer adipiscing elit, sed diam nonumy nibh equismod tincidunt ut laoreet.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="grid-container" id="event-container">
+    <div class="grid-x">
+        <div class="cell">
+            <h1 class="cell" id="event-title">Upcoming Education Events</h1>
+            <div class="grid-x event-item">
+                <div class="cell medium-2">
+                    <div class="event-date">
+                        <h1>24</h1>
+                        <div class="underlined"></div>
+                        <p>October 2018</p>
+                    </div>
+                </div>
+                <div class="cell medium-3">
+                    <div class="event-image">
+                        <img src="" alt=""/>
+                    </div>
+                </div>
+                <div class="cell medium-7 event-teaser">
+                    <a href="/">The Geographies of a Care-Based Economy</a>
+                    <p>Investigationes demonstraverunt lectores legere me lius ii legunt seapius lectorum parum claram nunc putamus parum claram</p>
+                </div>
+            </div>
+            <div class="grid-x event-item">
+                <div class="cell medium-2">
+                    <div class="event-date">
+                        <h1>24</h1>
+                        <div class="underlined"></div>
+                        <p>October 2018</p>
+                    </div>
+                </div>
+                <div class="cell medium-3">
+                    <div class="event-image">
+                        <img src="" alt=""/>
+                    </div>
+                </div>
+                <div class="cell medium-7 event-teaser">
+                    <a href="/">The Geographies of a Care-Based Economy</a>
+                    <p>Investigationes demonstraverunt lectores legere me lius ii legunt seapius lectorum parum claram nunc putamus parum claram</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="grid-x">
+    <div class="cell text-center">
+        <div class="registration-container">
+            <div class="background-image"></div>
+            <div class="content">
+                <h2>Get the Coaching Training for Free</h2>
+                <h4>It’s limited seating! Hurry up.</h4>
+                <a href="#features" class="button btn-registration">View All Features</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="grid-container full" id="news-container">
+    <div class="grid-x">
+        <div class="grid-container">
+            <h1 id="section-title">Our Latest News</h1>
+            <div class="grid-x">
+                <div class="cell medium-4 news-item-first">
+                    <div class="card">
+                        <img src="/static/images/list-univer.jpg">
+                        <div class="card-section">
+                            <p>Octeber 24, 2016</p>
+                            <h3>This is a simple card with an image.</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="cell medium-5 news-item-list">
+                    <div class="media-object">
+                        <div class="media-object-section">
+                            <div class="image">
+                                <img src= "/static/images/list-univer-mini.jpg">
+                            </div>
+                        </div>
+                        <div class="media-object-section main-section">
+                            <p>Octeber 3, 2016</p>
+                            <h5>Dreams feel real while we're in them.</h5>
+                        </div>
+                    </div>
+
+                    <div class="media-object">
+                        <div class="media-object-section">
+                            <div class="image">
+                                <img src= "/static/images/list-univer-mini.jpg">
+                            </div>
+                        </div>
+                        <div class="media-object-section main-section">
+                            <p>Octeber 3, 2016</p>
+                            <h5>Dreams feel real while we're in them.</h5>
+                        </div>
+                    </div>
+                    <div class="media-object">
+                        <div class="media-object-section">
+                            <div class="image">
+                                <img src= "/static/images/list-univer-mini.jpg">
+                            </div>
+                        </div>
+                        <div class="media-object-section main-section">
+                            <p>Octeber 3, 2016</p>
+                            <h5>Dreams feel real while we're in them.</h5>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="cell medium-3">
+                    <div class="card">
+                        <img src="/static/images/list-univer.jpg">
+                        <div class="card-section text-center">
+                            <h2>Subscribe</h2>
+                            <p>to our newsletter</p>
+                        </div>
+                        <div class="card-section">
+                            <form>
+                                <div class="grid-container">
+                                    <div class="grid-x grid-padding-x">
+                                        <div class="cell">
+                                            <label>Input Label
+                                                <input type="text" placeholder=".medium-6.cell">
+                                            </label>
+                                        </div>
+
+                                        <div class="cell">
+                                            <input type="button" class="button" name="subscribe" value="subscribe"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 {% endblock %}

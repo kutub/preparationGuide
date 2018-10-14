@@ -1,25 +1,48 @@
 {% load static %}<!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>{% block title %}Django Boards{% endblock %}</title>
-    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-  </head>
-  <body>
+<head>
+  <meta charset="utf-8">
+  <title>{% block title %}Preparation Guide{% endblock %}</title>
+  <link rel="stylesheet" href="{% static 'css/foundation.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/project-style.css' %}">
+</head>
+<body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div class="container">
-        <a class="navbar-brand" href="">Django Boards</a>
+<!--<div class="title-bar" data-responsive-toggle="responsive-menu" data-hide-for="medium large">-->
+<!--<button class="menu-icon" type="button" data-toggle="responsive-menu"></button>-->
+<!--<div class="title-bar-title">Menu</div>-->
+<!--</div>-->
+
+<div class="top-bar" id="responsive-menu">
+  <div class="grid-container">
+    <div class="grid-x">
+      <div class="top-bar-left">
+        <ul class="dropdown menu" data-dropdown-menu>
+          <li class="menu-text">Site Title</li>
+          <li class="has-submenu">
+            <a href="#0">One</a>
+          </li>
+          <li><a href="#0">Two</a></li>
+          <li><a href="#0">Three</a></li>
+        </ul>
       </div>
-    </nav>
-
-    <div class="container">
-      <ol class="breadcrumb my-4">
-        {% block breadcrumb %}
-        {% endblock %}
-      </ol>
-      {% block content %}
-      {% endblock %}
+      <div class="top-bar-right">
+        <ul class="menu">
+          <li><input type="search" placeholder="Search"></li>
+          <li><button type="button" class="button">Search</button></li>
+        </ul>
+      </div>
     </div>
-  </body>
+  </div>
+</div>
+
+
+{% block breadcrumb %}
+{% endblock %}
+
+
+{% block content %}
+{% endblock %}
+
+</body>
 </html>
