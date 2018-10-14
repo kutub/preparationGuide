@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block breadcrumb %}
+<li class="breadcrumb-item active"><h2>Reading</h2></li>
+{% endblock %}
+
+{% block content %}
+
+    {% for reading in object_list %}
+    <div class="card">
+        <div class="card-body">
+            <a href="{% url 'reading-detail' reading.id %}"><h3>{{ reading.reading_name }}</h3></a>
+        </div>
+    </div>
+    {% endfor %}
+{% endblock %}

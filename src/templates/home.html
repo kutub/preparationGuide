@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block breadcrumb %}
+<li class="breadcrumb-item active">{{latest_reading}}</li>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+
+    <div class="row">
+        {% for context in object_list %}
+        <div class="col-sm">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <a href="">
+                        <h5 class="card-title">{{ context.reading_name }}</h5>
+                    </a>
+                    <p class="card-text">{{latest_reading.description}}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

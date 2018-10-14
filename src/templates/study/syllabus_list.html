@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block breadcrumb %}
+<li class="breadcrumb-item active">Syllabus</li>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        {% for syllabus in object_list %}
+        <div class="col-sm">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <a href="{% url 'lesson_list' syllabus.subject %}">
+                        <h5 class="card-title">{{ syllabus.subject }} ( {{syllabus.number_for_subject}} )</h5>
+                    </a>
+                    <p class="card-text">{{syllabus.description}}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

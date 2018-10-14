@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block breadcrumb %}
+<li class="breadcrumb-item active">Lesson</li>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        {% for lesson in object_list %}
+        <div class="col-sm">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <a href="{% url 'reading_list' lesson.lesson_name %}">
+                        <h5 class="card-title">{{ lesson.lesson_name }} ( {{lesson.number_for_subject}} )</h5>
+                    </a>
+                    <p class="card-text">{{lesson.description}}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
