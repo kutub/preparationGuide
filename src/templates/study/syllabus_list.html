@@ -1,24 +1,38 @@
 {% extends "base.html" %}
 
-{% block breadcrumb %}
-<li class="breadcrumb-item active">Syllabus</li>
-{% endblock %}
-
 {% block content %}
-<div class="container">
-    <div class="row">
-        {% for syllabus in object_list %}
-        <div class="col-sm">
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                    <a href="{% url 'lesson_list' syllabus.subject %}">
-                        <h5 class="card-title">{{ syllabus.subject }} ( {{syllabus.number_for_subject}} )</h5>
-                    </a>
-                    <p class="card-text">{{syllabus.description}}</p>
-                </div>
-            </div>
+<div class="grid-container full" id="subject-page-container">
+    <header class="grid-x">
+        <div class="cell  medium-8 medium-offset-2">
+            <img src="/static/images/study-image.jpg" alt=""/>
         </div>
-        {% endfor %}
-    </div>
+    </header>
+    <section class="grid-x">
+            <div class="cell medium-8 medium-offset-2">
+                {% for syllabus in object_list %}
+                <div class="grid-x" style="border-bottom: 1px solid #e2e2e2;padding-top: 30px; padding-bottom: 30px;">
+                    <div class="cell medium-3">
+                        <div class="grid-x">
+                            <div class="cell">
+                                <h4>{{syllabus.subject}}</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cell medium-9">
+                        <div class="grid-x">
+                            {% for lesson in syllabus.belongs_to_subject.all %}
+                            <div class="cell medium-4">
+                                <a href="{% url 'reading_list' lesson.lesson_name %}"><h5>{{lesson}}</h5></a>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                </div>
+                {% endfor %}
+            </div>
+    </section>
 </div>
+
 {% endblock %}

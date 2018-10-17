@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="grid-x" style="margin-bottom: 20px;">
+    <div class="cell">
+        <img src="/static/images/mcq-detail" alt="bcs-mcq"/>
+    </div>
+</div>
+<div class="grid-container">
+    <div class="grid-x">
+        {% for allmcq in object_list %}
+        <div class="cell medium-6 medium-offset-3 mcq-item">
+            <div class="card">
+                <fieldset >
+                    <legend class="card-section"><h5 class="card-title">{{allmcq.id}}. {{ allmcq.question }} </h5></legend>
+                    <div class="card-section">
+                        <input type="radio" name="pokemon" value="{{allmcq.s1}}" id="s1" required><label for="s1">{{allmcq.s1}}</label>
+                        <input type="radio" name="pokemon" value="{{allmcq.s2}}" id="s2"><label for="s2">{{allmcq.s1}}</label>
+                        <input type="radio" name="pokemon" value="{{allmcq.s3}}" id="s3"><label for="s3">{{allmcq.s1}}</label>
+                        <input type="radio" name="pokemon" value="{{allmcq.s4}}" id="s4"><label for="s4">{{allmcq.s1}}</label>
+                    </div>
+                </fieldset>
+                <div class="card-divider">
+                    <p>Ans: <span>{{allmcq.answer}}</span></p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

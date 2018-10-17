@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="grid-container full" id="subject-page-container">
+    <header class="grid-x">
+        <div class="cell  medium-8 medium-offset-2">
+            <img src="/static/images/mcq-image.jpg" alt=""/>
+        </div>
+    </header>
+    <section class="grid-x">
+            <div class="cell medium-8 medium-offset-2">
+                {{mcqsubject}}
+                {% for mcqsubject in object_list %}
+                <div class="grid-x" style="border-bottom: 1px solid #e2e2e2;padding-top: 30px; padding-bottom: 30px;">
+                    <div class="cell medium-3">
+                        <div class="grid-x">
+                            <div class="cell">
+                                <h4>{{mcqsubject.subject}}</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cell medium-9">
+                        <div class="grid-x">
+                            {% for lesson in mcqsubject.belongs_to_subject.all %}
+                            <div class="cell medium-4">
+                                <a href="{% url 'mcq_detail' lesson.lesson_name %}"><h5>{{lesson}}</h5></a>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                </div>
+                {% endfor %}
+            </div>
+    </section>
+</div>
+
+{% endblock %}

@@ -143,3 +143,79 @@ html, body, h1, h2, h3, h4, h5{
 #news-container .news-item-list .image img{
     border-radius: 5px;
 }
+
+#mission-container {
+    padding: 120px 0;
+
+}
+
+#mission-container .mission-content{
+    padding-right: 30px;
+}
+
+#mission-container .mission-content p {
+    color: #666666;
+    font-size: 20px;
+    font-weight: 400;
+    opacity: .6;
+    margin-bottom: 30px;
+}
+
+#mission-container .mission-video img{
+  border-radius: 8px;
+}
+#mission-container .mission-video{
+    position: relative;
+    padding-left: 20px;
+}
+#mission-container .mission-video div{
+    position: absolute;
+    top: 40%;
+    left: 40%;
+}
+#mission-container .mission-video div img{
+    width: 80px;
+}
+
+#testimonial-container{
+    background-color: #F2F2F2;
+    padding: 120px 0;
+}
+
+#testimonial-container .testimonial-panel .testimonial-img img{
+    border-radius: 100%;
+}
+
+#testimonial-container #testimonial-title{
+    margin-bottom: 50px;
+}
+
+#testimonial-container #testimonial-img-sec{
+    margin-bottom: 40px;
+}
+
+#testimonial-container #testimonial-quote .name{
+    margin-top: 30px;
+}
+
+#testimonial-container #testimonial-quote .btn-slide-change{
+    margin-top: 50px;
+}
+
+#question-container {
+    background-color: #5BBC2E;
+    padding: 50px 0;
+
+}
+#question-container h2{
+    color: #ffffff
+}
+#question-container .button{
+    background-color: #333333;
+    font-size: 1.3em;
+    border-radius: 8px;
+}
+
+#subject-page-container{
+    background-color: #F2F2F2;
+}

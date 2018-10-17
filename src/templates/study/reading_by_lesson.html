@@ -1,16 +1,22 @@
 {% extends "base.html" %}
 
 {% block breadcrumb %}
-<li class="breadcrumb-item active"><h2>Reading</h2></li>
+
 {% endblock %}
 
 {% block content %}
 
+
+<div class="grid-x">
     {% for reading in object_list %}
-    <div class="card">
-        <div class="card-body">
-            <a href="{% url 'reading-detail' reading.id %}"><h3>{{ reading.reading_name }}</h3></a>
+    <div class="cell medium-6 medium-offset-3">
+        <div class="card">
+            <div class="card-section">
+                <a href="{% url 'reading-detail' reading.id %}"><h3>{{ reading.reading_name }}</h3></a>
+                <p>Film Music to discuss and perform with a handy template for creating a storyboard (some students use 2 or three of these sheets). Also helpful ideas...</p>
+            </div>
         </div>
     </div>
     {% endfor %}
+</div>
 {% endblock %}

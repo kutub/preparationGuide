@@ -1,9 +1,16 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h2>Reading Detail</h2>
-    <ul>
-            <li><h2>{{ reading.reading_name }}</h2></li>
-            <p>{{ reading.description }}</p>
-    </ul>
+
+<div class="grid-x">
+    <div class="cell medium-6 medium-offset-3">
+        <div class="card">
+            <h3 class="card-section">{{ reading.reading_name }}</h3>
+            <div class="card-section">
+                <p>{{ reading.description }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
 {% endblock %}
