@@ -14,20 +14,21 @@
 <!--<div class="title-bar-title">Menu</div>-->
 <!--</div>-->
 
-<div class="top-bar" id="responsive-menu">
-  <div class="grid-container">
+<div class="grid-x top-bar" id="responsive-menu">
+  <div class="cell medium-8 medium-offset-2">
     <div class="grid-x">
-      <div class="top-bar-left">
-        <ul class="dropdown menu" data-dropdown-menu>
-          <li class="menu-text"><a href="{% url 'index' %}"><h3>Site Title</h3></a></li>
-          <li class="has-submenu">
-            <a href="#0">One</a>
-          </li>
-          <li><a href="#0">Two</a></li>
-          <li><a href="#0">Three</a></li>
+      <div class="cell medium-2 menu-text">
+        <a href="{% url 'index' %}"><h3>Site Title</h3></a>
+      </div>
+      <div class="cell medium-7">
+        <ul class="menu">
+          <li><a href="{% url 'subject_list' %}">Study</a></li>
+          <li><a href="{% url 'mcq_subject_list' %}">MCQ</a></li>
+          <li><a href="">Model Test</a></li>
+          <li><a href="">Blog</a></li>
         </ul>
       </div>
-      <div class="top-bar-right">
+      <div class="cell medium-3 top-bar-right">
         <ul class="menu">
           <li><input type="search" placeholder="Search"></li>
           <li><button type="button" class="button">Search</button></li>
@@ -36,7 +37,6 @@
     </div>
   </div>
 </div>
-
 
 {% block breadcrumb %}
 {% endblock %}
