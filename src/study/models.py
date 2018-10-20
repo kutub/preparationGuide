@@ -1,5 +1,6 @@
 from django.conf import settings
 from django.contrib.auth import get_user_model
+from ckeditor.fields import RichTextField
 from django.db import models
 
 
@@ -40,7 +41,8 @@ class Lesson(models.Model):
 
 class Reading(models.Model):
     reading_name = models.CharField(max_length=300, unique=True)
-    description = models.TextField(null=True, blank=True)
+    # description = models.TextField(null=True, blank=True)
+    description = RichTextField(null=True, blank=True)
     reading_for = models.ForeignKey(Lesson,
                                    related_name='belongs_to_lesson',
                                    on_delete=models.SET(get_sentinel_user))
