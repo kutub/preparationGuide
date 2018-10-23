@@ -8,6 +8,15 @@ def get_sentinel_user():
     return get_user_model().objects.get_or_create(username='deleted')[0]
 
 
+class StatusQuerySet(models.QuerySet):
+    pass
+
+
+class StatusManager(models.Manager):
+    def get_queryset(self):
+        return StatusQuerySet(self.model, using=self._db)
+
+
 class Syllabus(models.Model):
     subject = models.CharField(max_length=200, unique=True)
     number_for_subject = models.IntegerField(null=True, blank=True)
@@ -18,6 +27,8 @@ class Syllabus(models.Model):
                                    on_delete=models.SET(get_sentinel_user),
                                    null=True, blank=True)
 
+    objects = StatusManager()
+
     def __str__(self):
         return self.subject
 
@@ -25,7 +36,7 @@ class Syllabus(models.Model):
 class Lesson(models.Model):
     lesson_name = models.CharField(max_length=200, unique=True)
     lesson_for = models.ForeignKey(Syllabus,
-                                   related_name='belongs_to_subject',
+                                   related_name='subject_list',
                                    on_delete=models.SET(get_sentinel_user))
     created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET(get_sentinel_user))
     updated_by = models.ForeignKey(settings.AUTH_USER_MODEL,
@@ -41,13 +52,13 @@ class Lesson(models.Model):
 
 class Reading(models.Model):
     reading_name = models.CharField(max_length=300, unique=True)
-    # description = models.TextField(null=True, blank=True)
+    # reading_teaser = models.CharField(max_length=320, unique=True)
     description = RichTextField(null=True, blank=True)
     reading_for = models.ForeignKey(Lesson,
-                                   related_name='belongs_to_lesson',
+                                   related_name='lessons',
                                    on_delete=models.SET(get_sentinel_user))
     reading_for_subject = models.ForeignKey(Syllabus,
-                                   related_name='belongs_to_reading',
+                                   related_name='readings',
                                    on_delete=models.SET(get_sentinel_user))
     created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET(get_sentinel_user))
     updated_by = models.ForeignKey(settings.AUTH_USER_MODEL,

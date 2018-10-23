@@ -21,7 +21,7 @@
 
                     <div class="cell medium-9">
                         <div class="grid-x">
-                            {% for lesson in syllabus.belongs_to_subject.all %}
+                            {% for lesson in syllabus.subject_list.all %}
                             <div class="cell medium-4">
                                 <a href="{% url 'reading_list' lesson.lesson_name %}"><h5>{{lesson}}</h5></a>
                             </div>
